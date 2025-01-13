@@ -7,7 +7,8 @@ export default function ToDoForm({setInputValue}){
 
     function setInput(e){
         e.preventDefault()
-        setInputValue(inputItem.current.value)
+        // setInputValue(inputItem.current.value)
+        setInputValue({value: inputItem.current.value, done: false})
         setText('')
     }
 
