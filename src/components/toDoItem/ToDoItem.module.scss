@@ -9,31 +9,36 @@
     justify-content: space-between;
     align-items: center;
 
-    .postText{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        
-        .postIcon{
-            display: flex;
-            margin-right: 10px;
-        }
-    }
-    .controls{
-        display: flex;
-        justify-content: flex-start;
-
-        .deleteIcon{
-            margin-right: 10px;
-        }
-        .doneIcon{}
-    }
+    
 }
 .donePost{
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 14px;
     border-radius: 5px;
     background-color: gray;
     color: black;
     margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postText{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .postIcon{
+        display: flex;
+        margin-right: 10px;
+    }
+}
+.controls{
+    display: flex;
+    justify-content: flex-start;
+
+    .deleteIcon{
+        margin-right: 10px;
+    }
+    .doneIcon{}
 }

@@ -9,12 +9,16 @@ function App() {
   function updatePost(value){
     setPosts([...posts, value])
   }
+  function changeStatus(value){
+    posts.forEach(el => el.value === value ? el.done = !el.done : false)
+    setPosts([...posts])
+  }
 
   return (
     <>
       <h1>ToDo React App</h1>
       <ToDoForm setInputValue={updatePost}></ToDoForm>
-      <ToDoList posts={posts}></ToDoList>
+      <ToDoList posts={posts} changeStatus={changeStatus}></ToDoList>
     </>
   )
 }
