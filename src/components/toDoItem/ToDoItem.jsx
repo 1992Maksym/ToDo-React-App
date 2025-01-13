@@ -1,9 +1,12 @@
 import classes from './ToDoItem.module.scss'
 
-export default function ToDoItem({post, changeStatus}){
+export default function ToDoItem({post, changeStatus,removePost}){
 
     function checkStatus(){
         changeStatus(post.value)
+    }
+    function deletePost(){
+        removePost(post.value)
     }
 
     return(
@@ -26,7 +29,7 @@ export default function ToDoItem({post, changeStatus}){
                 <div>{post.value}</div>
             </div>
             <div className={classes.controls}>
-                <div className={classes.deleteIcon}>
+                <div className={classes.deleteIcon} onClick={deletePost}>
                     <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 11V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14 11V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

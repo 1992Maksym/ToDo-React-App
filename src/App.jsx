@@ -13,12 +13,22 @@ function App() {
     posts.forEach(el => el.value === value ? el.done = !el.done : false)
     setPosts([...posts])
   }
+  function removePost(value){
+    const arr = posts.filter(el => el.value !== value)
+    setPosts([...arr])
+  }
 
   return (
     <>
       <h1>ToDo React App</h1>
       <ToDoForm setInputValue={updatePost}></ToDoForm>
-      <ToDoList posts={posts} changeStatus={changeStatus}></ToDoList>
+      {!posts.length ? <div className='empty-list'>To Do List Is Empty</div> :
+      <ToDoList 
+        posts={posts} 
+        changeStatus={changeStatus} 
+        removePost={removePost}>
+      </ToDoList>
+      }
     </>
   )
 }
