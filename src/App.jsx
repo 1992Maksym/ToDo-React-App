@@ -17,6 +17,13 @@ function App() {
     const arr = posts.filter(el => el.value !== value)
     setPosts([...arr])
   }
+  function deletePosts(){
+    setPosts([])
+  }
+  function deleteMarked(){
+    const arr = posts.filter(el => !el.done)
+    setPosts([...arr])
+  }
 
   return (
     <>
@@ -26,8 +33,10 @@ function App() {
       <ToDoList 
         posts={posts} 
         changeStatus={changeStatus} 
-        removePost={removePost}>
-      </ToDoList>
+        removePost={removePost}
+        deletePosts={deletePosts}
+        deleteMarked={deleteMarked}
+        ></ToDoList>
       }
     </>
   )
